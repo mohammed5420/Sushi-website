@@ -1,0 +1,56 @@
+.delicious {
+    @extend .best-testy;
+    background-image: none;
+    background-color: #fefefe;
+    position:  relative;
+    .delicious__contener {
+        gap: 4rem;
+
+        @extend .testy-contener;
+        flex-direction: row-reverse ; 
+        padding: 7rem 1rem 7rem;
+        
+
+        .delicious-info {
+            @extend .testy-info;
+            margin-bottom: 3rem;
+
+            &__title {
+                @extend .testy-info__title;
+            }
+            &__info {
+                @extend .testy-info__info;
+            }
+            &__btn {
+                @extend .testy-info__btn;
+            }
+        }
+    }
+    
+    & > img:nth-child(2) {
+        position: absolute;
+        right: 25px;
+        top: 6em;
+        width: 2.5rem;
+    }
+
+    & > img:nth-child(3) {
+        position: absolute;
+        left: 20px;
+        top: 22rem;
+        width: 2.5rem;
+    }
+
+    & > img:nth-child(4) {
+        position: absolute;
+        left: 40%;
+        bottom: 20px;
+        width: 2.5rem;
+    }
+}
+
+@supports (gap: 4rem){
+    .delicious .delicious__contener > .delicious-info {       
+        margin-bottom: 0;
+    }
+}

@@ -1,0 +1,49 @@
+.chef {
+    width: 100%; 
+    padding: 12rem  1rem 10rem;
+    background-color: rgba(255, 0, 0, 0.507);
+    background-image: url(../img/img-9.png);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-blend-mode: multiply;
+
+    .chef-contener {
+        @include flex-box(column);
+        justify-content: space-evenly;
+        padding: 3rem 0;
+        width: 90%;
+        margin: auto;
+
+        .chef-img {
+            max-width: 300px;
+            margin-bottom: 2rem;
+            img {
+                width: 100%;
+            }
+        }
+        .chef-description {
+            font-size: clamp(1rem , calc(1vw + 5px) , 2vw);
+            color: rgb(245, 245, 245);
+            font-weight: 400;
+            margin-bottom: 2rem;
+            max-width: 700px;
+            text-align: center;
+        }
+        .chef-name {
+            text-decoration: none;
+            font-size: clamp(1.3rem , 2rem , 3rem);
+            color: #fff;
+            padding: .7rem 0;
+            text-transform: uppercase;
+            transition: all  250ms ease-out;
+            &:hover {
+                background-color: #fff;
+                padding: .7rem 3rem;
+                color: $primary;
+                border-radius: 100px;
+                font-size: clamp(1.2rem , 2vw , 2vw); 
+            }
+        }
+    }
+}

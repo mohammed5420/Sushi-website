@@ -1,0 +1,137 @@
+.subscribe {
+    width: 100%;
+    padding: 6rem 1rem 12rem;
+    margin-bottom: -5px;
+    height: 100vh;
+    position: relative;
+
+    .sub-contener {
+        padding: 2rem 0;
+        width: 100%;
+        margin: auto;
+        @include flex-box(column);
+        justify-content: space-evenly;
+        text-align: center;
+
+        .sub-info {
+            max-width: 700px;
+            margin-bottom: 2rem;
+            &__title {
+                letter-spacing: 1px;
+               font-size: clamp(2.5rem , calc(2vw + 5px) , calc(3vw + 5px)); 
+               color: $primary;
+               text-transform: uppercase;
+               margin-bottom: 2rem;
+            }
+            &__info {
+                font-size: clamp(1rem , calc(.8vw + 5px) , calc(1vw + 5px)); 
+                color: $primary;
+                margin-bottom: 2rem;
+            }
+        }
+        .sub-feld {
+            width: 100%;
+            display: flex;
+            flex-wrap: nowrap;
+            position: relative;
+            transition: all .2s ease;
+            &:hover .sub-btn,
+            &:focus .sub-btn{
+                animation: sub-btn .7s ease ;
+            }
+            
+            .input {
+               position: absolute;
+               left: 0;
+               width: calc(100% - 50px);
+               padding: 1em;
+               background-color: rgb(226, 220, 220); 
+               border-radius: 200px;
+               outline: none;
+               padding: 1rem 2rem;
+               border: 0;
+            }
+            input::placeholder{
+                color: rgb(97, 97, 97);
+                font-weight: bold;
+                font-size: .8rem;
+                letter-spacing: 1px;
+                text-transform: capitalize;
+            }
+            .sub-btn {
+                position: absolute;
+                display: block;
+                right: 0;
+                background-color: $primary;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: #fff;
+                padding: .9rem 1.7em;
+                border-radius: 100px;
+                transition: all  .2s ease ;
+            }
+        }
+    }
+
+    & > img:nth-child(2) {
+        position: absolute;
+        right: 60px;
+        top: 3em;
+        width: 2.5rem;
+        z-index: 2;
+    }
+
+    & > img:nth-child(3) {
+        position: absolute;
+        left: 20px;
+        top: 10em;
+        width: 2.5rem;
+        z-index: 2;
+    }
+
+    & > img:nth-child(4) {
+        position: absolute;
+        left: 30%;
+        bottom: 40px;
+        width: 2.5rem;
+        z-index: 2;
+    }
+
+    & > img:nth-child(5) {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 1;
+        width: 30%;
+    }
+
+    & > img:nth-child(6) {
+        position: absolute;
+        right: 0;
+        top: 0;
+        z-index: 1;
+        width: 30%;
+    }
+
+    & > img:nth-child(7) {
+        position: absolute;
+        left: 0;
+        bottom: 0px;
+        width: 100%;
+        z-index: -1;
+    }
+}
+
+@keyframes sub-btn {
+    0% {
+        transform: translateX(0);
+    }
+
+    80% {
+        transform: translateX(-50px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}

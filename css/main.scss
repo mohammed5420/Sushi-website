@@ -1,0 +1,31 @@
+$primary: #ff7f7f;
+
+@mixin flex-box ($direction){
+    display: flex;
+    flex-direction: $direction;
+    justify-content: space-between;
+    align-items: center;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto' , sans-serif;
+}
+
+@import "./header";
+@import "./primary";
+@import "./ricpe";
+@import "./test";
+@import "./statistic";
+@import "./delicious";
+@import "./chef";
+@import "./sub";
+@import "./footer";
+@import "./responsive";
+
+

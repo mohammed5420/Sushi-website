@@ -1,0 +1,65 @@
+footer {
+    width: 100%;
+    padding: 10rem 2rem 2rem;
+    background-color: #111;
+
+    .footer-contener {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        flex-direction: row;
+        justify-content: space-between;
+
+
+        .sushi {
+            width: max-content;
+            @include flex-box(column);
+            align-items: flex-start;
+            justify-content: center;
+
+            &__title {
+                text-transform: capitalize;
+                color: rgb(119, 119, 119);
+                margin-bottom: 1rem;
+            }
+
+            &__info {
+                text-transform: capitalize;
+                color: rgb(109, 109, 109);
+                max-width: 300px;
+                margin-bottom: 1rem;
+            }
+
+            &__imgs {
+                @include flex-box(row);
+                justify-content: flex-start;
+                img {
+                    width: 30px;
+                    margin-right: 10px;
+                    cursor: pointer;
+                    transition: transform 250ms ease-in-out;
+                    &:hover{
+                        transform: scale(1.08);
+                    }
+                }
+            }
+        }
+        div {
+            margin: 0 0 1rem 1rem;
+
+            h2 {
+                color: rgb(119, 119, 119);
+                margin-bottom: 1rem;
+                text-transform: capitalize;
+            }
+            a {
+                display: block;
+                text-decoration: none;
+                text-transform: capitalize;
+                color: rgb(109, 109, 109);
+                margin-bottom: 10px;
+            }
+        }
+    }
+}

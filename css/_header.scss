@@ -1,0 +1,196 @@
+header {
+    position: relative;
+    @include flex-box(row);
+    background-color: #ff7f7fc0;
+    padding: .5em 0;
+    height: 10vh;
+    margin-bottom: -10vh;
+    z-index: 99999;
+    .logo-contener {
+        margin-left: 2em;
+        width: 4em;
+
+         img {
+            width: 100%;
+            object-fit: contain;
+        }
+
+    }
+
+    
+    .nav-bar {
+        @include flex-box(row);
+        justify-content: space-around;
+        transition:  all 250ms ease-in;
+        list-style: none;
+        & > li {
+            position: relative;
+            text-align: center;
+        }
+
+        .nav-link {
+            position: relative;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-size: 1em;
+            font-weight: 700;
+            color: #fff;
+            padding: 1em;
+            z-index: 1;
+            
+            &::after{
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 3px;
+                background-color: #fff;
+                transform: scaleX(0);
+                transform-origin: left;
+                transition: all .4s ease-in-out;
+            }
+            &:hover::after,
+            &:focus::after{
+                transform: scaleX(1);
+                transform-origin: right;
+            }
+        }
+    }
+
+    .tools{
+
+        @include flex-box(row); 
+        margin-right: 2em;
+
+        .search-contener {
+            position: relative;
+            width: 1.5rem;
+            height: 30px;
+            margin-right: 10px;
+            overflow: hidden;
+
+            input[type='search'] {
+                opacity: 0;
+                width: 0;
+                height: 100%;
+                position: absolute;
+                left: 0;
+                border: none;
+                outline: none;
+                background-color: #fff;
+                border-radius: 100em;
+                padding: 0 3em 0 1em;
+                color: $primary;
+                transition: opacity .3s ease-in-out;
+                &::placeholder {
+                    color: $primary;
+                }
+            }
+            #search-icon {
+                position: absolute;
+                right: 0;
+                width: 1.5em;
+                top: 50%;
+                transform: translate(0, -50%);
+                z-index: 2;
+                cursor: pointer;
+            }
+        }
+        .humberger {
+            @include flex-box(column);
+            position: relative;
+            width: 2em;
+            cursor: pointer;
+            transition: all .2s ease-in;
+
+            &:hover,
+            &:focus {
+                transform: scale(1.2);
+            }
+            
+            span{
+                width: 90%;
+                height: 3px;
+                background-color: #fff;
+                margin-bottom: 4px;
+                border-radius: 20px;
+
+            }
+        }
+    }
+}
+body > .header-opacity{
+    background-color: $primary;
+    transition: all 250ms ease-in-out;
+}
+
+body header .tools .active-berger {
+    span{
+        top: 0;
+        left: 0;
+        position: absolute;
+        transition: all 350ms ease-in;
+    }
+
+    span:nth-child(1){
+        transform: rotate(40deg);
+    }
+
+    span:nth-child(2),span:nth-child(3){
+        transform: rotate(140deg);
+    }
+    span:nth-child(3) {
+        opacity: 0;
+    }
+}
+
+body header .open-nav {
+    height: 90vh;
+    z-index: 999;
+    justify-content: space-evenly;
+}
+
+.open-nav li:nth-child(odd) {
+    animation: fadeLeft 250ms ease-in-out backwards;
+}
+
+.open-nav li:nth-child(even) {
+    animation: fadeRight 250ms ease-in-out backwards;
+}
+
+@for $i from 1 through 5 {
+    .open-nav li:nth-child(#{$i}){
+        animation-delay: ($i * 0.1s) + 0.4s;
+    }
+}
+
+@keyframes fadeLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0px);  
+    }
+}
+
+@keyframes fadeRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(0px);  
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav {
+            height: 10vh;
+            padding: 2rem 0;
+            background-color: aqua;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        nav .nav-lists {
+            display: flex;
+            list-style-type: none;
+            justify-content: center;
+            align-items: center;
+        }
+        nav .nav-lists .list-item {
+            margin-left: 4rem;
+        }
+        nav .nav-lists .list-item:first-child{
+            margin-left: 20px;
+        }
+        .nav-link {
+            color: #333;
+            text-decoration: none;
+            font-size: 1.2rem;
+            display: blocks;
+        }
+        .hide {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            overflow: hidden;
+            align-items: center;
+            height: 0;
+            
+        }
+
+
+        .hover .hide li{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <nav >
+        <ul class="nav-lists">
+            <li class="list-item hover"><a href="#" class="nav-link ">Main
+                <ul class="hide">
+                    <li>hello</li>
+                    <li>hello</li>
+                    <li>hello</li>
+                    <li>hello</li>
+                </ul>
+            </a></li>
+            <li class="list-item"><a href="#" class="nav-link">Content</a></li>
+            <li class="list-item"><a href="#" class="nav-link">Service</a></li>
+            <li class="list-item"><a href="#" class="nav-link">login</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
